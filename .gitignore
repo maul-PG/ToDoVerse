@@ -1,1 +1,22 @@
-/readme.md
+# Composer dependencies
+/vendor/
+
+# Environment files
+.env
+config/mail.php
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Cache
+*.cache
+*.tmp
+*.bak
