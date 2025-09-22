@@ -36,14 +36,20 @@
 
 ---
 
+
 🖼️ Screenshot Demo
 Landing Page
-<p align="center"> <img src="https://github.com/user-attachments/assets/cea4fd4d-6fac-4590-a95b-1c76e30ac1b2" alt="Landing" width="600"> </p>
-Regis & Login
-<table> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/619087a4-cace-4d63-acde-1fe62cac7ecc" alt="Login User" width="350"> <br><b>Login User</b> </td> <td align="center"> <img src="https://github.com/user-attachments/assets/34503f68-00c6-407e-bf68-bd0f60dda135" alt="Register" width="350"> <br><b>Register</b> </td> </tr> </table>
-Dashboard
-<table> <tr> <td align="center"> <img src="https://github.com/user-attachments/assets/1a2e0b6d-c56a-4d80-adda-ab373ee8762d" alt="Dashboard User" width="350"> <br><b>User Dashboard</b> </td> <td align="center"> <img src="https://github.com/user-attachments/assets/3f1d9feb-63f8-4a9d-8997-ad3d3f3d1c7c" alt="Dashboard Admin" width="350"> <br><b>Admin Dashboard</b> </td> </tr> </table>
+<div align="center"> <img src="https://github.com/user-attachments/assets/cea4fd4d-6fac-4590-a95b-1c76e30ac1b2" alt="Landing" width="600"> </div>
 
+---
+
+Registrasi & Login
+<div align="center"> <table> <tr> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/619087a4-cace-4d63-acde-1fe62cac7ecc" alt="Login User" width="350"><br> <b>Login User</b> </td> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/5cf8cccf-9dc7-408d-b919-c006ad25a553" alt="Register" width="350"><br> <b>Register</b> </td> </tr> </table> </div>
+
+---
+
+Dashboard
+<div align="center"> <table> <tr> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/1a2e0b6d-c56a-4d80-adda-ab373ee8762d" alt="Dashboard User" width="350"><br> <b>User Dashboard</b> </td> <td align="center" style="padding: 10px;"> <img src="https://github.com/user-attachments/assets/3f1d9feb-63f8-4a9d-8997-ad3d3f3d1c7c" alt="Dashboard Admin" width="350"><br> <b>Admin Dashboard</b> </td> </tr> </table> </div>
 
 ---
 
