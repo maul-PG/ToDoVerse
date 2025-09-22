@@ -1,0 +1,259 @@
+/* =======================
+   GENERAL & SETUP
+======================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --glow-x: 50%;
+    --glow-y: 50%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #cce9ff;
+    color: #0c2b4d;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle 400px at var(--glow-x) var(--glow-y), rgba(162, 215, 255, 0.8), transparent);
+    z-index: -1;
+    transition: background 0.2s;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    min-height: 100vh;
+    padding: 80px 0;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3, h4 { font-weight: 600; }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; text-align: center; }
+p { color: #1e4575; }
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+.btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 29, 61, 0.1);
+    padding: 2rem;
+}
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "greeting greeting profile"
+        "stat1 stat2 profile";
+    gap: 1.5rem;
+    width: 100%;
+}
+.hero-greeting { grid-area: greeting; align-self: end; }
+.hero-profile { grid-area: profile; }
+.hero-stat-1 { grid-area: stat1; }
+.hero-stat-2 { grid-area: stat2; }
+.hero-profile.glass-card { display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; }
+.profile-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.profile-info .hero-profile-img { width: 50px; height: 50px; border-radius: 50%; }
+.profile-info span { font-weight: 600; font-size: 1.1rem; }
+.today-focus-widget { text-align: center; width: 100%; }
+.today-focus-widget h4 { font-weight: 400; color: #1e4575; margin-bottom: 1rem; text-align: left; }
+.focus-task-card { background: rgba(255, 255, 255, 0.5); border-radius: 16px; padding: 1rem; display: flex; align-items: center; text-align: left; gap: 1rem; }
+.focus-task-icon { flex-shrink: 0; width: 45px; height: 45px; background-color: #e0f7fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.focus-task-icon i { color: #00796b; font-size: 1.5rem; }
+.focus-task-details h5 { font-weight: 600; color: #0c2b4d; margin: 0; }
+.focus-task-details p { font-size: 0.85rem; margin: 0; }
+.focus-task-btn { width: 100%; margin-top: 1rem; }
+.hero-greeting h1 { margin-bottom: 0.5rem; }
+.hero-greeting h1 span { color: #0056b3; }
+.hero-stat-1, .hero-stat-2 { text-align: center; }
+.stat-number { font-size: 2.5rem; font-weight: 700; color: #0c2b4d; margin-top: 0.5rem;}
+
+/* =======================
+   FIND SCHEDULE SECTION
+======================= */
+.find-schedule-grid { display: grid; grid-template-columns: 1fr 1.5fr 1fr; grid-template-rows: auto auto; gap: 1.5rem; width: 100%; }
+.find-title-card { grid-column: 1 / -1; text-align: center; }
+.motivation-card, .search-card, .calendar-card, .flashcard-card { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.flashcard-card { grid-column: 1 / -1; text-align: left; flex-direction: row; align-items: center; gap: 1.5rem; }
+.flashcard-icon { font-size: 2rem; color: #007bff; }
+.search-box { display: flex; align-items: center; background: rgba(255,255,255,0.5); border-radius: 12px; padding: 5px 15px; margin-top: 1rem;}
+.search-box i { margin-right: 10px; }
+.search-box input { flex: 1; border: none; background: transparent; outline: none; font-size: 1rem; color: #0c2b4d; }
+#mini-calendar { width: 100%; margin-top: 1rem; font-size: 0.9rem; }
+#mini-calendar .mc-header { text-align: center; font-weight: 600; margin-bottom: 0.75rem; color: #0c2b4d; }
+#mini-calendar table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+#mini-calendar th { font-size: 0.8rem; color: #1e4575; padding-bottom: 5px; }
+#mini-calendar td { text-align: center; padding: 5px; height: 30px; }
+#mini-calendar .mc-day { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; transition: all 0.2s ease; }
+#mini-calendar .mc-day.mc-today { background-color: #007bff; color: white; font-weight: bold; }
+#mini-calendar .mc-day:not(.mc-today):hover { background-color: rgba(0, 123, 255, 0.1); }
+
+/* =======================
+   PLAN SECTION (COVERFLOW CAROUSEL)
+======================= */
+.plan-section { position: relative; overflow: hidden; }
+.plan-section h2 { margin-bottom: 1rem; }
+.plan-carousel-wrapper { position: relative; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; }
+.plan-carousel-track { position: relative; width: 280px; height: 350px; transform-style: preserve-3d; }
+.plan-section .plan-card { position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-width: unset; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: transform 0.6s ease, opacity 0.6s ease, z-index 0s 0.3s; }
+.plan-card.is-left { transform: translateX(-60%) scale(0.8); opacity: 0.5; z-index: 5; }
+.plan-card.is-active { transform: translateX(0) scale(1.1); opacity: 1; z-index: 10; }
+.plan-card.is-right { transform: translateX(60%) scale(0.8); opacity: 0.5; z-index: 5; }
+.plan-card.is-hidden { transform: scale(0.5); opacity: 0; z-index: 1; }
+.plan-icon { font-size: 2.5rem; color: #007bff; margin-bottom: 1rem; }
+.plan-action-btn { background: #007bff; color: white; border: none; border-radius: 10px; padding: 8px 16px; margin-top: 1.5rem; cursor: pointer; font-weight: 600; opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s; }
+.plan-card.is-active .plan-action-btn { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.plan-action-btn:hover { background-color: #0056b3; }
+.plan-carousel-wrapper .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 15; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; width: 45px; height: 45px; font-size: 1.5rem; color: #0c2b4d; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+.plan-carousel-wrapper .nav-arrow:hover { background: #fff; box-shadow: 0 4px 15px rgba(0, 29, 61, 0.1); }
+.plan-carousel-wrapper .nav-arrow.prev { left: calc(50% - 220px); }
+.plan-carousel-wrapper .nav-arrow.next { right: calc(50% - 220px); }
+
+/* =======================
+   FEATURE SECTION (GALERI)
+======================= */
+.feature-section { justify-content: center; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.feature-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; }
+.feature-item { text-align: center; padding: 2.5rem 1.5rem; cursor: pointer; }
+.feature-item-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; }
+.feature-item-icon i { font-size: 2.5rem; }
+.feature-item h3 { margin-bottom: 0.5rem; color: #0c2b4d; }
+
+/* =======================
+   QUIZ & OTHERS
+======================= */
+.quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; width: 100%;}
+.quiz-image { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+.quiz-content-container { text-align: left; }
+.quiz-content-container h2 { text-align: left; }
+.quiz-content-container p { margin: 1rem 0 1.5rem; }
+
+/* =======================
+   MODALS
+======================= */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); align-items: center; justify-content: center; }
+.modal-content.glass-card { width: 90%; max-width: 500px; animation: modal-swoop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.close-modal { position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; color: #0c2b4d; cursor: pointer; }
+.modal-input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(0, 123, 255, 0.2); background: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1rem; }
+.modal-textarea { width: 100%; min-height: 100px; margin-top: 1rem; margin-bottom: 1rem; resize: vertical; font-family: 'Poppins', sans-serif; padding: 12px; border-radius: 10px; border: 1px solid rgba(0, 123, 255, 0.2); background: rgba(255,255,255,0.8); }
+.modal-submit-btn { width: 100%; }
+
+/* Modal Tes Kemampuanmu */
+#testModal .modal-content { max-width: 650px; }
+.test-modal-slider-wrapper { width: 100%; overflow: hidden; }
+.test-modal-slider { display: flex; width: 200%; transition: transform 0.5s ease-in-out; }
+.test-modal-slide { width: 50%; padding: 1rem; text-align: center; }
+.test-modal-slide h3 { margin-bottom: 0.5rem; }
+.test-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.test-choice-card { background: rgba(255, 255, 255, 0.5); padding: 2rem 1.5rem; border-radius: 16px; border: 1px solid transparent; cursor: pointer; transition: all 0.3s ease; }
+.test-choice-card:hover { transform: translateY(-5px); border-color: #007bff; box-shadow: 0 6px 20px rgba(0, 123, 255, 0.1); }
+.test-choice-card i { font-size: 2.5rem; color: #007bff; margin-bottom: 1rem; }
+.saran-redirect { margin-top: 1.5rem; font-size: 0.9rem; }
+.saran-redirect a { color: #007bff; font-weight: 600; text-decoration: none; }
+.saran-redirect a:hover { text-decoration: underline; }
+.slider-nav { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
+.slider-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(0, 123, 255, 0.2); border: none; cursor: pointer; transition: background 0.3s ease; }
+.slider-dot.active { background: #007bff; }
+
+/* Modal Flashcard */
+#flashcardModal .flashcard-modal-content { background: #eaf5ff; padding: 0; max-width: 600px; overflow: hidden; }
+.flashcard-header { padding: 1.5rem 2rem; border-bottom: 1px solid rgba(0, 123, 255, 0.1); }
+.flashcard-header h3 { margin: 0; text-align: center; }
+.flashcard-progress-container { width: 100%; background-color: rgba(0, 123, 255, 0.1); border-radius: 10px; height: 10px; margin-top: 1rem; }
+.flashcard-progress-bar { width: 0%; height: 100%; background-color: #007bff; border-radius: 10px; transition: width 0.4s ease-out; }
+.flashcard-game-area { padding: 2rem; perspective: 1200px; height: 250px; display: flex; align-items: center; justify-content: center; }
+.flashcard { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1); }
+.flashcard.is-flipped { transform: rotateY(180deg); }
+.flashcard-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 29, 61, 0.1); }
+.flashcard-front { background: #fff; font-size: 1.25rem; font-weight: 600; }
+.flashcard-back { background: #d4edff; transform: rotateY(180deg); text-align: center; }
+.flashcard-back h4 { color: #0056b3; margin-bottom: 0.5rem; }
+.flashcard-controls { padding: 0 2rem 2rem 2rem; }
+.answer-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.answer-btn { background: #fff; border: 1px solid #cce9ff; border-radius: 12px; padding: 1rem; cursor: pointer; font-size: 1rem; transition: all 0.2s ease; }
+.answer-btn:hover:not(:disabled) { background-color: #eaf5ff; transform: translateY(-2px); }
+.answer-btn:disabled { cursor: not-allowed; }
+.action-buttons { display: flex; justify-content: center; gap: 1rem; }
+.btn-secondary { background-color: transparent; border: 1px solid #007bff; color: #007bff; }
+.flashcard.correct { animation: correct-answer 0.6s ease; }
+.flashcard.incorrect { animation: incorrect-answer 0.6s ease; }
+.answer-btn.correct { background-color: #c3e6cb; border-color: #28a745; color: #155724; font-weight: bold; }
+.answer-btn.incorrect { background-color: #f5c6cb; border-color: #dc3545; color: #721c24; }
+.flashcard.flip-out { animation: flip-out 0.5s ease-in forwards; }
+.flashcard.flip-in { animation: flip-in 0.5s ease-out 0.5s forwards; opacity: 0; }
+@keyframes correct-answer { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes incorrect-answer { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-10px); } 40% { transform: translateX(10px); } 60% { transform: translateX(-10px); } 80% { transform: translateX(10px); } }
+@keyframes flip-out { from { transform: rotateY(0) scale(1); opacity: 1; } to { transform: rotateY(90deg) scale(0.9); opacity: 0; } }
+@keyframes flip-in { from { transform: rotateY(-90deg) scale(0.9); opacity: 0; } to { transform: rotateY(0) scale(1); opacity: 1; } }
+
+/* Modal Detail Fitur */
+.modal-content.feature-modal-content { text-align: center; }
+.feature-modal-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem; }
+.feature-modal-header .feature-item-icon { margin-bottom: 1rem; transform: scale(1.2); }
+#modalFeatureTitle { margin: 0; color: #0c2b4d; }
+#modalFeatureDesc { font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; }
+#modalFeatureLink { text-decoration: none; display: inline-block; }
+@keyframes modal-swoop-in { from { opacity: 0; transform: translateY(60px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+.footer { padding: 1.5rem 0; text-align: center; color: #0c2b4d; font-size: 0.9rem; }
+
+/* =======================
+   ANIMASI ON-SCROLL
+======================= */
+.fade-in-up, .fade-in-left { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in-up { transform: translateY(40px); }
+.fade-in-left { transform: translateX(-40px); }
+.fade-in-up.is-visible, .fade-in-left.is-visible { opacity: 1; transform: none; }
